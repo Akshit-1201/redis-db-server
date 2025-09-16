@@ -1,0 +1,7 @@
+I want to prepare a chat application, where two users can interact with each other (send messages). 
+
+- I want the messages to be displayed on real-time (no need to reload the page to get new messages) 
+- Use Redis for that. 
+- Keep the UI as simple as possible. 
+
+Also explain the concepts involved in the activity... Especially how Redis is being used here.
