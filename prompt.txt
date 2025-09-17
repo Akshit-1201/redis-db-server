@@ -5,3 +5,10 @@ I want to prepare a chat application, where two users can interact with each oth
 - Keep the UI as simple as possible. 
 
 Also explain the concepts involved in the activity... Especially how Redis is being used here.
+
+
+===========
+Hosting Part:
+===========
+
+I'm on MobaXterm SSH Client using EC2 instance running on AWS (Amazon Linux). Got it ? Now I want to host my redis-chat-app project on AWS... and get the IP address for it so that anyone can access the application. My code is available on github: https://github.com/Akshit-1201/redis-db-server Progress so far: - SSH Client is already running - Installed httpd on it - in the directory /var/www/html - Refer the Screenshot attached - State the detailed steps for hosting the application so that multiple users can use our application with the explanation.
