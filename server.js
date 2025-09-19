@@ -1,13 +1,21 @@
 // Importing Libraries
 require('dotenv').config();
 const express = require('express');
-const http = require('http');
+// const http = require('http');
+const https = require('https');
+const fs = require('fs');
 const { createClient } = require('redis');
 const { Server } = require('socket.io');
 
+// Load SSL Cert + key
+const options = {
+    key: fs.readFileSync('./cert/key.pem'),
+    cert: fs.readFileSync('./cert/cert.pem')
+};
+
 // creating express app with Socket.IO
 const app = express();
-const server = http.createServer(app);
+const server = https.createServer(options, app);
 const io = new Server(server);
 
 // Configurations
@@ -127,7 +135,7 @@ async function start() {
 
     // Creating the Server
     server.listen(PORT, '0.0.0.0', () => {
-        console.log(`Server listening on http://0.0.0.0:${PORT}`);
+        console.log(`Server listening on https://0.0.0.0:${PORT}`);
     });
 }
 
