@@ -1,4 +1,5 @@
+.gitignore
 node_modules
 redis_chat_app_setup.docx
 .env
-server2.js
+database.sql

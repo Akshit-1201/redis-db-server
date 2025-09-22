@@ -74,7 +74,13 @@
         const textInput = document.getElementById('text');
         const sendBtn = document.getElementById('send');
 
+        const shown = new set();
+
         function addMessage(msg) {
+            const key = (msg.ts || '') + '|' + (msg.username || '');
+            if (shown.has(key)) return;
+            shown.add(key);
+
             const dt = new Date(msg.ts || Date.now());
             const wrapper = document.createElement('div');
             wrapper.className = 'msg';
@@ -115,6 +121,13 @@
         // Receive Real-Time messages from Server
         socket.on('message', (msg) => {
             addMessage(msg);
+        });
+
+        // Whenever a new client connects, server sends 'history' (array of lat 20 messages)
+        socket.on('history', (messages) => {
+            if (!Array.isArray(messaages)) return;
+            // append oldest-first (server already sent oldest-first)
+            messages.forEach((m) => addMessages(m));
         });
 
         sendBtn.addEventListener('click', sendMessage);
