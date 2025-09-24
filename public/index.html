@@ -74,7 +74,7 @@
         const textInput = document.getElementById('text');
         const sendBtn = document.getElementById('send');
 
-        const shown = new set();
+        const shown = new Set();
 
         function addMessage(msg) {
             const key = (msg.ts || '') + '|' + (msg.username || '');
@@ -125,9 +125,9 @@
 
         // Whenever a new client connects, server sends 'history' (array of lat 20 messages)
         socket.on('history', (messages) => {
-            if (!Array.isArray(messaages)) return;
+            if (!Array.isArray(messages)) return;
             // append oldest-first (server already sent oldest-first)
-            messages.forEach((m) => addMessages(m));
+            messages.forEach((m) => addMessage(m));
         });
 
         sendBtn.addEventListener('click', sendMessage);

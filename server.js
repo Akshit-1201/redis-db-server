@@ -29,8 +29,8 @@ const PUBSUB_CHANNEL = process.env.PUBSUB_CHANNEL; // Redis List for channels
 
 // MySQL Config from .env
 const MySQL_HOST = process.env.MySQL_HOST;
-const MYSQL_PORT = process.env.MYSQL_PORT;
-const MYSQL_USER = process.env.MYSQL_PORT;
+const MYSQL_PORT = parseInt(process.env.MYSQL_PORT) || 3306;
+const MYSQL_USER = process.env.MYSQL_USER;
 const MYSQL_PASSWORD = process.env.MYSQL_PASSWORD;
 const MYSQL_DATABASE = process.env.MYSQL_DATABASE;
 

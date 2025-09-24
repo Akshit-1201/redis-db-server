@@ -2,4 +2,3 @@
 node_modules
 redis_chat_app_setup.docx
 .env
-database.sql

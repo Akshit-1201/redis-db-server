@@ -17,15 +17,15 @@
         },
         {
             "mysqlOptions": {
-                "authProtocol": "xprotocol",
+                "authProtocol": "default",
                 "enableSsl": "Disabled"
             },
             "ssh": "Disabled",
             "previewLimit": 50,
             "server": "localhost",
-            "port": 33060,
+            "port": 3306,
             "driver": "MySQL",
-            "name": "redis-chat-app",
+            "name": "chat",
             "database": "redis_chat",
             "username": "root",
             "password": "loda@123",
